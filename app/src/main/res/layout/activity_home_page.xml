@@ -59,7 +59,7 @@
             app:cardCornerRadius="8dp"
             app:cardElevation="20dp"
             android:layout_margin="20dp"
-            android:backgroundTint="#95a5a6"
+            android:backgroundTint="#E1E7E8"
             android:focusable="true">
 
             <LinearLayout
@@ -87,6 +87,7 @@
 
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
+            android:id="@+id/organizartion"
             android:foreground="?attr/selectableItemBackground"
             android:clickable="true"
             android:layout_width="0dp"
@@ -95,7 +96,7 @@
             app:cardCornerRadius="8dp"
             app:cardElevation="20dp"
             android:layout_margin="20dp"
-            android:backgroundTint="#95a5a6"
+            android:backgroundTint="#FFE1E7E8"
             android:focusable="true">
 
             <LinearLayout
@@ -133,6 +134,7 @@
         android:weightSum="2">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/rules"
             android:foreground="?attr/selectableItemBackground"
             android:clickable="true"
             android:layout_width="0dp"
@@ -141,7 +143,7 @@
             app:cardCornerRadius="8dp"
             app:cardElevation="20dp"
             android:layout_margin="20dp"
-            android:backgroundTint="#95a5a6"
+            android:backgroundTint="#FFE1E7E8"
             android:focusable="true">
 
             <LinearLayout
@@ -169,6 +171,7 @@
 
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
+            android:id="@+id/about"
             android:foreground="?attr/selectableItemBackground"
             android:clickable="true"
             android:layout_width="0dp"
@@ -177,7 +180,7 @@
             app:cardCornerRadius="8dp"
             app:cardElevation="20dp"
             android:layout_margin="20dp"
-            android:backgroundTint="#95a5a6"
+            android:backgroundTint="#FFE1E7E8"
             android:focusable="true">
 
             <LinearLayout

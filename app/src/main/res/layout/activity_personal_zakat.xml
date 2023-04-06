@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".personal_zakat">
 
   <LinearLayout
@@ -61,9 +62,11 @@
               android:gravity="center">
 
               <com.google.android.material.textfield.TextInputLayout
+                  android:id="@+id/gold_layout"
                   style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                   android:layout_marginStart="20dp"
                   android:layout_marginEnd="20dp"
+                  android:layout_marginBottom="25dp"
                   android:hint="স্বর্ণের মূল্য (টাকা)"
                   app:helperText="ফিল্ডটি পূরণ করতে হবে"
                   app:helperTextTextColor="#FF0000"
@@ -72,12 +75,15 @@
                   <com.google.android.material.textfield.TextInputEditText
                       android:id="@+id/gold"
                       android:layout_width="match_parent"
+                      android:inputType="number"
                       android:layout_height="match_parent"/>
               </com.google.android.material.textfield.TextInputLayout>
               <com.google.android.material.textfield.TextInputLayout
+                  android:id="@+id/silver_layout"
                   style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                   android:layout_marginStart="20dp"
                   android:layout_marginEnd="20dp"
+                  android:layout_marginBottom="25dp"
                   android:hint="রুপার মূল্য (টাকা)"
                   app:helperText="ফিল্ডটি পূরণ করতে হবে"
                   app:helperTextTextColor="#FF0000"
@@ -86,12 +92,15 @@
                   <com.google.android.material.textfield.TextInputEditText
                       android:id="@+id/silver"
                       android:layout_width="match_parent"
+                      android:inputType="number"
                       android:layout_height="match_parent"/>
               </com.google.android.material.textfield.TextInputLayout>
               <com.google.android.material.textfield.TextInputLayout
+                  android:id="@+id/bank_layout"
                   style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                   android:layout_marginStart="20dp"
                   android:layout_marginEnd="20dp"
+                  android:layout_marginBottom="25dp"
                   android:hint="হাতে এবং ব্যাংক অ্যাকাউন্টে (টাকা)"
                   app:helperText="ফিল্ডটি পূরণ করতে হবে"
                   app:helperTextTextColor="#FF0000"
@@ -99,13 +108,16 @@
                   android:layout_height="wrap_content">
                   <com.google.android.material.textfield.TextInputEditText
                       android:id="@+id/bank"
+                      android:inputType="number"
                       android:layout_width="match_parent"
                       android:layout_height="match_parent"/>
               </com.google.android.material.textfield.TextInputLayout>
               <com.google.android.material.textfield.TextInputLayout
+                  android:id="@+id/loan_layout"
                   style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                   android:layout_marginStart="20dp"
                   android:layout_marginEnd="20dp"
+                  android:layout_marginBottom="25dp"
                   android:hint="আপনার ঋণ (টাকা)"
                   app:helperText="ফিল্ডটি পূরণ করতে হবে"
                   app:helperTextTextColor="#FF0000"
@@ -113,13 +125,16 @@
                   android:layout_height="wrap_content">
                   <com.google.android.material.textfield.TextInputEditText
                       android:id="@+id/loan"
+                      android:inputType="number"
                       android:layout_width="match_parent"
                       android:layout_height="match_parent"/>
               </com.google.android.material.textfield.TextInputLayout>
               <com.google.android.material.textfield.TextInputLayout
+                  android:id="@+id/invest_layout"
                   style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                   android:layout_marginStart="20dp"
                   android:layout_marginEnd="20dp"
+                  android:layout_marginBottom="25dp"
                   android:hint="ব্যবসায়িক বিনিয়োগ, শেয়ার, সঞ্চয়পত্র, পেনশন (টাকা)"
                   app:helperText="ফিল্ডটি পূরণ করতে হবে"
                   app:helperTextTextColor="#FF0000"
@@ -127,13 +142,16 @@
                   android:layout_height="wrap_content">
                   <com.google.android.material.textfield.TextInputEditText
                       android:id="@+id/invest"
+                      android:inputType="number"
                       android:layout_width="match_parent"
                       android:layout_height="match_parent"/>
               </com.google.android.material.textfield.TextInputLayout>
               <com.google.android.material.textfield.TextInputLayout
+                  android:id="@+id/cradit_layout"
                   style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                   android:layout_marginStart="20dp"
                   android:layout_marginEnd="20dp"
+                  android:layout_marginBottom="25dp"
                   android:hint="ধার করা টাকা, ক্রেডিট এর ওপর পণ্য কিনা (টাকা)"
                   app:helperText="ফিল্ডটি পূরণ করতে হবে"
                   app:helperTextTextColor="#FF0000"
@@ -141,13 +159,16 @@
                   android:layout_height="wrap_content">
                   <com.google.android.material.textfield.TextInputEditText
                       android:id="@+id/cradit"
+                      android:inputType="number"
                       android:layout_width="match_parent"
                       android:layout_height="match_parent"/>
               </com.google.android.material.textfield.TextInputLayout>
               <com.google.android.material.textfield.TextInputLayout
+                  android:id="@+id/employee_layout"
                   style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                   android:layout_marginStart="20dp"
                   android:layout_marginEnd="20dp"
+                  android:layout_marginBottom="25dp"
                   android:hint="কর্মচারীদের কারণে মজুরী (টাকা)"
                   app:helperText="ফিল্ডটি পূরণ করতে হবে"
                   app:helperTextTextColor="#FF0000"
@@ -155,13 +176,16 @@
                   android:layout_height="wrap_content">
                   <com.google.android.material.textfield.TextInputEditText
                       android:id="@+id/employee"
+                      android:inputType="number"
                       android:layout_width="match_parent"
                       android:layout_height="match_parent"/>
               </com.google.android.material.textfield.TextInputLayout>
               <com.google.android.material.textfield.TextInputLayout
+                  android:id="@+id/tax_layout"
                   style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                   android:layout_marginStart="20dp"
                   android:layout_marginEnd="20dp"
+                  android:layout_marginBottom="25dp"
                   android:hint="ট্যাক্স, ভাড়া, ইউটিলিটি বিল (টাকা)"
                   app:helperText="ফিল্ডটি পূরণ করতে হবে"
                   app:helperTextTextColor="#FF0000"
@@ -169,6 +193,7 @@
                   android:layout_height="wrap_content">
                   <com.google.android.material.textfield.TextInputEditText
                       android:id="@+id/tax"
+                      android:inputType="number"
                       android:layout_width="match_parent"
                       android:layout_height="match_parent"/>
               </com.google.android.material.textfield.TextInputLayout>
