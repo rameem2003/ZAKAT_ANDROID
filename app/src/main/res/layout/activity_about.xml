@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="অ্যাপ ডেভেলপার"
+            android:text="অ্যাপ সম্পর্কে"
             android:textAlignment="center"
             android:textSize="40sp"
             android:textStyle="bold"
@@ -43,6 +43,13 @@
                 android:textSize="30sp"
                 android:textStyle="bold"/>
 
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/app_icon"
+                android:layout_gravity="center"/>
+
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -55,11 +62,96 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#FF0000"
-                android:text="অ্যাপটি ডেভেলপমেন্ট পর্যায়ে আছে"
+                android:layout_marginTop="20dp"
+                android:textColor="#097F05"
+                android:text="অ্যাপটির বিস্তারিত"
                 android:textAlignment="center"
                 android:textSize="27sp"
                 android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textColor="#000000"
+                android:text="Minimum Android Version: Android 7"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textColor="#000000"
+                android:text="Android API Level: API 24 Level"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textColor="#000000"
+                android:text="Android Code Name: Nougat"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textColor="#000000"
+                android:text="App Version: 0.2 Insider Preview"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textColor="#097F05"
+                android:text="অ্যাপটির ডেভেলপার"
+                android:textAlignment="center"
+                android:textSize="27sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textColor="#000000"
+                android:textAlignment="center"
+                android:text="মাহমুদ হাসান রামীম"
+                android:textSize="30sp"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/me"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textColor="#000000"
+                android:text="কম্পিউটার টেকনোলোজি"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textColor="#000000"
+                android:textAlignment="center"
+                android:text="ইন্সটিটিউট অব সায়েন্স ট্রেড অ্যান্ড টেকনোলোজি, ঢাকা"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
+
+
         </LinearLayout>
     </ScrollView>
 
