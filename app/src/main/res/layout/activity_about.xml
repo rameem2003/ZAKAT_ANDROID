@@ -29,7 +29,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        android:padding="15dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -74,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:textColor="#000000"
-                android:text="Minimum Android Version: Android 7"
+                android:text="Minimum Android OS: Android 7"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
 
@@ -101,7 +102,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:textColor="#000000"
-                android:text="App Version: 0.2 Insider Preview"
+                android:text="@string/app_version"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
 

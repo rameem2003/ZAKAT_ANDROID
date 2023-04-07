@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:text="প্রাতিষ্ঠানিক যাকাত"
             android:textAlignment="center"
-            android:textSize="40sp"
+            android:textSize="35sp"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:layout_marginTop="20dp"/>

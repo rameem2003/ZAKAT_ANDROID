@@ -205,6 +205,7 @@
                   android:layout_marginStart="20dp"
                   android:layout_marginEnd="20dp"
                   android:layout_marginTop="40dp"
+                  android:layout_marginBottom="40dp"
                   android:text="হিসাব করুন"
                   android:textSize="20sp"
                   android:textStyle="bold"/>
