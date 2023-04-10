@@ -20,8 +20,8 @@ public class personal_zakat extends AppCompatActivity {
     LinearLayout calcView, resultView;
     MaterialButton calc, back;
 
-    TextInputLayout gold_layout, silver_layout, bank_layout, loan_layout, invest_layout, cradit_layout, employee_layout, tax_layout;
-    TextInputEditText gold, silver, bank, loan, invest, cradit, employee, tax;
+    TextInputLayout gold_layout, silver_layout, bank_layout, hajj_layout, loan_layout, invest_layout, cradit_layout, employee_layout, tax_layout;
+    TextInputEditText gold, silver, bank, hajj, loan, invest, cradit, employee, tax;
     TextView total, jakat;
     int nisab = 43000;
 
@@ -41,6 +41,7 @@ public class personal_zakat extends AppCompatActivity {
         gold_layout = findViewById(R.id.gold_layout);
         silver_layout = findViewById(R.id.silver_layout);
         bank_layout = findViewById(R.id.bank_layout);
+        hajj_layout = findViewById(R.id.hajj_layout);
         loan_layout = findViewById(R.id.loan_layout);
         invest_layout = findViewById(R.id.invest_layout);
         cradit_layout = findViewById(R.id.cradit_layout);
@@ -51,6 +52,7 @@ public class personal_zakat extends AppCompatActivity {
         gold = findViewById(R.id.gold);
         silver = findViewById(R.id.silver);
         bank = findViewById(R.id.bank);
+        hajj = findViewById(R.id.hajj);
         loan = findViewById(R.id.loan);
         invest = findViewById(R.id.invest);
         cradit = findViewById(R.id.cradit);
@@ -72,6 +74,7 @@ public class personal_zakat extends AppCompatActivity {
                 String gold_value = gold.getText().toString();
                 String silver_value = silver.getText().toString();
                 String bank_value = bank.getText().toString();
+                String hajj_value = hajj.getText().toString();
                 String loan_value = loan.getText().toString();
                 String invest_value = invest.getText().toString();
                 String cradit_value = cradit.getText().toString();
@@ -92,6 +95,12 @@ public class personal_zakat extends AppCompatActivity {
                 else if(bank_value.isEmpty()){
                     bank_layout.setHelperText(errorMsg);
                     bank_layout.setError(errorMsg);
+                    Toast.makeText(personal_zakat.this, toastMsg, Toast.LENGTH_SHORT).show();
+                }
+
+                else if(hajj_value.isEmpty()){
+                    hajj_layout.setHelperText(errorMsg);
+                    hajj_layout.setError(errorMsg);
                     Toast.makeText(personal_zakat.this, toastMsg, Toast.LENGTH_SHORT).show();
                 }
 
@@ -138,6 +147,10 @@ public class personal_zakat extends AppCompatActivity {
                         bank_layout.setError("");
                         bank_layout.setHelperText("ফিল্ডটি পূরণ হয়েছে");
                         bank_layout.setHelperTextColor(ColorStateList.valueOf(Color.parseColor("#FF009432")));
+                    } if (!hajj_value.isEmpty()) {
+                        hajj_layout.setError("");
+                        hajj_layout.setHelperText("ফিল্ডটি পূরণ হয়েছে");
+                        hajj_layout.setHelperTextColor(ColorStateList.valueOf(Color.parseColor("#FF009432")));
                     } if (!loan_value.isEmpty()) {
                         loan_layout.setError("");
                         loan_layout.setHelperText("ফিল্ডটি পূরণ হয়েছে");
@@ -164,6 +177,7 @@ public class personal_zakat extends AppCompatActivity {
                     int gold_amount = Integer.parseInt(gold.getText().toString());
                     int silver_amount = Integer.parseInt(silver.getText().toString());
                     int bank_amount = Integer.parseInt(bank.getText().toString());
+                    int hajj_amount = Integer.parseInt(hajj.getText().toString());
                     int loan_amount = Integer.parseInt(loan.getText().toString());
                     int invest_amount = Integer.parseInt(invest.getText().toString());
 
@@ -171,7 +185,7 @@ public class personal_zakat extends AppCompatActivity {
                     int employee_amount = Integer.parseInt(employee.getText().toString());
                     int tax_amount = Integer.parseInt(tax.getText().toString());
 
-                    int asset = gold_amount + silver_amount + bank_amount + loan_amount + invest_amount;
+                    int asset = gold_amount + silver_amount + bank_amount + hajj_amount+ loan_amount + invest_amount;
                     int liabilities = cradit_amount + employee_amount + tax_amount;
 
                     int total_asset = asset - liabilities;

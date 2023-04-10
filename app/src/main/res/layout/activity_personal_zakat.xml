@@ -113,12 +113,29 @@
                       android:layout_height="match_parent"/>
               </com.google.android.material.textfield.TextInputLayout>
               <com.google.android.material.textfield.TextInputLayout
+                  android:id="@+id/hajj_layout"
+                  style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                  android:layout_marginStart="20dp"
+                  android:layout_marginEnd="20dp"
+                  android:layout_marginBottom="25dp"
+                  android:hint="(যেমন হজ্জ) এর জন্য জমা করা"
+                  app:helperText="ফিল্ডটি পূরণ করতে হবে"
+                  app:helperTextTextColor="#FF0000"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content">
+                  <com.google.android.material.textfield.TextInputEditText
+                      android:id="@+id/hajj"
+                      android:inputType="number"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"/>
+              </com.google.android.material.textfield.TextInputLayout>
+              <com.google.android.material.textfield.TextInputLayout
                   android:id="@+id/loan_layout"
                   style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                   android:layout_marginStart="20dp"
                   android:layout_marginEnd="20dp"
                   android:layout_marginBottom="25dp"
-                  android:hint="আপনার ঋণ (টাকা)"
+                  android:hint="ঋণে দেওয়া হয়েছে (টাকা)"
                   app:helperText="ফিল্ডটি পূরণ করতে হবে"
                   app:helperTextTextColor="#FF0000"
                   android:layout_width="match_parent"
