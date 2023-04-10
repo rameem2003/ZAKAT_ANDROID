@@ -203,7 +203,7 @@
                   android:layout_marginStart="20dp"
                   android:layout_marginEnd="20dp"
                   android:layout_marginBottom="25dp"
-                  android:hint="ট্যাক্স, ভাড়া, ইউটিলিটি বিল (টাকা)"
+                  android:hint="ট্যাক্স, ভাড়া, ইউটিলিটি বিল অবিলম্বে বকেয়া (টাকা)"
                   app:helperText="ফিল্ডটি পূরণ করতে হবে"
                   app:helperTextTextColor="#FF0000"
                   android:layout_width="match_parent"
@@ -276,9 +276,4 @@
 
 
   </ScrollView>
-
-
-
-
-
 </LinearLayout>

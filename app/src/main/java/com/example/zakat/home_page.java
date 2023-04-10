@@ -5,10 +5,12 @@ import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.View;
 
 public class home_page extends AppCompatActivity {
     private CardView personal, organization, rules, about;
+    Vibrator vibrator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +22,12 @@ public class home_page extends AppCompatActivity {
         rules = findViewById(R.id.rules);
         about = findViewById(R.id.about);
 
+        vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+
         personal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                vibrator.vibrate(100);
                 Intent i = new Intent(home_page.this, personal_zakat.class);
                 startActivity(i);
             }
@@ -31,6 +36,7 @@ public class home_page extends AppCompatActivity {
         organization.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                vibrator.vibrate(100);
                 Intent i = new Intent(home_page.this, organizational_zakat.class);
                 startActivity(i);
             }
@@ -39,6 +45,7 @@ public class home_page extends AppCompatActivity {
         rules.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                vibrator.vibrate(100);
                 Intent i = new Intent(home_page.this, rules.class);
                 startActivity(i);
             }
@@ -47,6 +54,7 @@ public class home_page extends AppCompatActivity {
         about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                vibrator.vibrate(100);
                 Intent i = new Intent(home_page.this, about.class);
                 startActivity(i);
             }
