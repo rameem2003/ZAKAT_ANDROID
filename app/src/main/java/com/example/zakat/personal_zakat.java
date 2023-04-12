@@ -2,12 +2,14 @@ package com.example.zakat;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.ColorStateListDrawable;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -80,6 +82,8 @@ public class personal_zakat extends AppCompatActivity {
                 String cradit_value = cradit.getText().toString();
                 String employee_value = employee.getText().toString();
                 String tax_value = tax.getText().toString();
+
+                closeKeyboard();
 
                 if(gold_value.isEmpty()){
                     gold_layout.setHelperText(errorMsg);
@@ -216,5 +220,13 @@ public class personal_zakat extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void closeKeyboard () {
+        View view = this.getCurrentFocus();
+        if(view != null){
+            InputMethodManager im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            im.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
     }
 }

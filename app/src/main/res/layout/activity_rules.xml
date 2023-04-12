@@ -84,6 +84,24 @@
                 android:textSize="25sp"
                 android:textStyle="normal"/>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="৪) যাকাতের হিসাব পদ্ধতি"
+                android:textSize="30sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="@string/amount_of_zakat"
+                android:textSize="25sp"
+                android:textStyle="normal"/>
+
+
+
         </LinearLayout>
     </ScrollView>
 
