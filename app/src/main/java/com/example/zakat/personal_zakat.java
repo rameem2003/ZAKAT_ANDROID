@@ -1,5 +1,6 @@
 package com.example.zakat;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -8,8 +9,10 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorStateListDrawable;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +21,8 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.util.zip.Inflater;
+
 public class personal_zakat extends AppCompatActivity {
     LinearLayout calcView, resultView;
     MaterialButton calc, back;
@@ -25,6 +30,9 @@ public class personal_zakat extends AppCompatActivity {
     TextInputLayout gold_layout, silver_layout, bank_layout, hajj_layout, loan_layout, invest_layout, cradit_layout, employee_layout, tax_layout;
     TextInputEditText gold, silver, bank, hajj, loan, invest, cradit, employee, tax;
     TextView total, jakat;
+
+    AlertDialog dialog;
+
     int nisab = 43000;
 
     @Override
@@ -196,17 +204,24 @@ public class personal_zakat extends AppCompatActivity {
 
                     if(total_asset >= nisab){
                         float payable_zakat = (float) ((total_asset * 2.5) / 100);
-                        calcView.setVisibility(View.GONE);
-                        resultView.setVisibility(View.VISIBLE);
+                        //calcView.setVisibility(View.GONE);
+                        //resultView.setVisibility(View.VISIBLE);
 
-                        total.setText("মোট সম্পদ " + total_asset + " টাকা");
-                        jakat.setText("যাকাত প্রদেয় " + payable_zakat + " টাকা");
+                        //total.setText("মোট সম্পদ " + total_asset + " টাকা");
+                        //jakat.setText("যাকাত প্রদেয় " + payable_zakat + " টাকা");
+
+                        showCustomAlertBox(total_asset, payable_zakat, "");
+
+
+
                     }else {
-                        calcView.setVisibility(View.GONE);
-                        resultView.setVisibility(View.VISIBLE);
+                        //calcView.setVisibility(View.GONE);
+                        //resultView.setVisibility(View.VISIBLE);
 
-                        total.setText("মোট সম্পদ " + total_asset + " টাকা");
-                        jakat.setText("আপনার জাকাত দেওয়ার মত পর্যাপ্ত নিসাব নাই!!");
+                        //total.setText("মোট সম্পদ " + total_asset + " টাকা");
+                        //jakat.setText("আপনার জাকাত দেওয়ার মত পর্যাপ্ত নিসাব নাই!!");
+
+                        showCustomAlertBox(total_asset, 0, "আপনার জাকাত দেওয়ার মত পর্যাপ্ত নিসাব নাই!!");
                     }
                 }
             }
@@ -218,6 +233,28 @@ public class personal_zakat extends AppCompatActivity {
                 calcView.setVisibility(View.VISIBLE);
                 resultView.setVisibility(View.GONE);
 
+            }
+        });
+    }
+
+    private void showCustomAlertBox(int asset, float zakat, String msg) {
+        // custom alert messagebox create
+        LayoutInflater inflater = getLayoutInflater();
+        View layoutView = inflater.inflate(R.layout.alertdialogue, null);
+        TextView totalAssetMsg = layoutView.findViewById(R.id.tatalAsset);
+        TextView zakatPayMsg = layoutView.findViewById(R.id.zakatPay);
+        Button customMsgBack = layoutView.findViewById(R.id.back);
+
+        dialog = new AlertDialog.Builder(personal_zakat.this).setView(layoutView).create();
+        dialog.show();
+
+        totalAssetMsg.setText("মোট সম্পদ " + asset + " টাকা");
+        zakatPayMsg.setText("যাকাত প্রদেয় " + zakat + " টাকা। " + msg);
+
+        customMsgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();;
             }
         });
     }

@@ -219,7 +219,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/app_version"
+            android:text="Republic of Legends এর একটি পণ্য "
             android:textAlignment="center"
             android:textColor="#665A5A"
             android:textSize="20sp"
