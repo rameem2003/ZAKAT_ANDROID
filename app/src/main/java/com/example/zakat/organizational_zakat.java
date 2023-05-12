@@ -1,13 +1,17 @@
 package com.example.zakat;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,6 +28,8 @@ public class organizational_zakat extends AppCompatActivity {
             cradit_layout, employee_layout, tax_layout;
     TextInputEditText gold, silver, bank, hajj, loan, invest, stock, cradit, employee, tax;
     TextView total, jakat;
+
+    AlertDialog dialog;
     int nisab = 43000;
 
     @Override
@@ -209,17 +215,20 @@ public class organizational_zakat extends AppCompatActivity {
 
                     if(total_asset >= nisab){
                         float payable_zakat = (float) ((total_asset * 2.5) / 100);
-                        calcView.setVisibility(View.GONE);
-                        resultView.setVisibility(View.VISIBLE);
+                        //calcView.setVisibility(View.GONE);
+                        //resultView.setVisibility(View.VISIBLE);
 
-                        total.setText("মোট সম্পদ " + total_asset + " টাকা");
-                        jakat.setText("যাকাত প্রদেয় " + payable_zakat + " টাকা");
+                        //total.setText("মোট সম্পদ " + total_asset + " টাকা");
+                        //jakat.setText("যাকাত প্রদেয় " + payable_zakat + " টাকা");
+
+                        showCustomAlertBox(total_asset, payable_zakat, "", true);
                     }else {
-                        calcView.setVisibility(View.GONE);
-                        resultView.setVisibility(View.VISIBLE);
+                        //calcView.setVisibility(View.GONE);
+                        //resultView.setVisibility(View.VISIBLE);
 
-                        total.setText("মোট সম্পদ " + total_asset + " টাকা");
-                        jakat.setText("আপনার জাকাত দেওয়ার মত পর্যাপ্ত নিসাব নাই!!");
+                        //total.setText("মোট সম্পদ " + total_asset + " টাকা");
+                        //jakat.setText("আপনার জাকাত দেওয়ার মত পর্যাপ্ত নিসাব নাই!!");
+                        showCustomAlertBox(total_asset, 0, "আপনার জাকাত দেওয়ার মত পর্যাপ্ত নিসাব নাই!!", false);
                     }
                 }
             }
@@ -234,6 +243,34 @@ public class organizational_zakat extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void showCustomAlertBox(int asset, float zakat, String msg, boolean state) {
+        // custom alert messagebox create
+        LayoutInflater inflater = getLayoutInflater();
+        View layoutView = inflater.inflate(R.layout.alertdialogue, null);
+        TextView totalAssetMsg = layoutView.findViewById(R.id.tatalAsset);
+        TextView zakatPayMsg = layoutView.findViewById(R.id.zakatPay);
+        Button customMsgBack = layoutView.findViewById(R.id.back);
+        ImageView stateIcon = layoutView.findViewById(R.id.stateIcon);
+
+        dialog = new AlertDialog.Builder(organizational_zakat.this).setView(layoutView).create();
+        dialog.show();
+
+        if(state == true){
+            stateIcon.setImageResource(R.drawable.baseline_check_circle_24);
+        } else if (state == false) {
+            stateIcon.setImageResource(R.drawable.baseline_error_24);
+        }
+        totalAssetMsg.setText("মোট সম্পদ " + asset + " টাকা");
+        zakatPayMsg.setText("যাকাত প্রদেয় " + zakat + " টাকা। " + msg);
+
+        customMsgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();;
+            }
+        });
     }
 
     public void closeKeyboard () {
