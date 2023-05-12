@@ -219,7 +219,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="A Product of Republic of Legends"
+            android:text="Product of Republic of Legends"
             android:textAlignment="center"
             android:textColor="#665A5A"
             android:textSize="20sp"
