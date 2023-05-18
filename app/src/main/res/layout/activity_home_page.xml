@@ -42,173 +42,236 @@
             android:textStyle="bold"/>
     </LinearLayout>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="top"
-        android:orientation="horizontal"
-        android:weightSum="2">
+        android:layout_height="520dp">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/personal"
-            android:foreground="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_weight="1"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="20dp"
-            android:layout_margin="20dp"
-            android:backgroundTint="#E1E7E8"
-            android:focusable="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:orientation="horizontal"
+                android:weightSum="2">
 
-                <ImageView
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:src="@drawable/baseline_account_circle_24"/>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/personal"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="20dp"
+                    android:layout_margin="20dp"
+                    android:backgroundTint="#E1E7E8"
+                    android:focusable="true">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="ব্যক্তিগত যাকাত"
-                    android:textAlignment="center"
-                    android:layout_marginTop="10dp"
-                    android:textStyle="bold"
-                    android:textSize="25sp"
-                    android:textColor="@color/black"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:src="@drawable/baseline_account_circle_24"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="ব্যক্তিগত যাকাত"
+                            android:textAlignment="center"
+                            android:layout_marginTop="10dp"
+                            android:textStyle="bold"
+                            android:textSize="25sp"
+                            android:textColor="@color/black"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/organizartion"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="20dp"
+                    android:layout_margin="20dp"
+                    android:backgroundTint="#FFE1E7E8"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:src="@drawable/baseline_warehouse_24"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="প্রাতিষ্ঠানিক যাকাত"
+                            android:textAlignment="center"
+                            android:layout_marginTop="10dp"
+                            android:textStyle="bold"
+                            android:textSize="25sp"
+                            android:textColor="@color/black"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
 
             </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:id="@+id/organizartion"
-            android:foreground="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_weight="1"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="20dp"
-            android:layout_margin="20dp"
-            android:backgroundTint="#FFE1E7E8"
-            android:focusable="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:orientation="horizontal"
+                android:weightSum="2">
 
-                <ImageView
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:src="@drawable/baseline_warehouse_24"/>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/rules"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="20dp"
+                    android:layout_margin="20dp"
+                    android:backgroundTint="#FFE1E7E8"
+                    android:focusable="true">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="প্রাতিষ্ঠানিক যাকাত"
-                    android:textAlignment="center"
-                    android:layout_marginTop="10dp"
-                    android:textStyle="bold"
-                    android:textSize="25sp"
-                    android:textColor="@color/black"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:src="@drawable/baseline_menu_book_24"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="যাকাতের নিয়ম"
+                            android:textAlignment="center"
+                            android:layout_marginTop="10dp"
+                            android:textStyle="bold"
+                            android:textSize="25sp"
+                            android:textColor="@color/black"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/about"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="20dp"
+                    android:layout_margin="20dp"
+                    android:backgroundTint="#FFE1E7E8"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:src="@drawable/baseline_info_24"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="ডেভেলপার তথ্য"
+                            android:textAlignment="center"
+                            android:layout_marginTop="10dp"
+                            android:textStyle="bold"
+                            android:textSize="24sp"
+                            android:textColor="@color/black"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
 
             </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="top"
-        android:orientation="horizontal"
-        android:weightSum="2">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/rules"
-            android:foreground="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_weight="1"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="20dp"
-            android:layout_margin="20dp"
-            android:backgroundTint="#FFE1E7E8"
-            android:focusable="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="horizontal"
+                android:weightSum="2">
 
-                <ImageView
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:src="@drawable/baseline_menu_book_24"/>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/update"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="20dp"
+                    android:layout_margin="20dp"
+                    android:backgroundTint="#FFE1E7E8"
+                    android:focusable="true">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="যাকাতের নিয়ম"
-                    android:textAlignment="center"
-                    android:layout_marginTop="10dp"
-                    android:textStyle="bold"
-                    android:textSize="25sp"
-                    android:textColor="@color/black"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:src="@drawable/baseline_download_24"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="অ্যাপ আপডেট"
+                            android:textAlignment="center"
+                            android:layout_marginTop="10dp"
+                            android:textStyle="bold"
+                            android:textSize="25sp"
+                            android:textColor="@color/black"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
 
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:id="@+id/about"
-            android:foreground="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_weight="1"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="20dp"
-            android:layout_margin="20dp"
-            android:backgroundTint="#FFE1E7E8"
-            android:focusable="true">
+        </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical">
+    </ScrollView>
 
-                <ImageView
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:src="@drawable/baseline_info_24"/>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="ডেভেলপার তথ্য"
-                    android:textAlignment="center"
-                    android:layout_marginTop="10dp"
-                    android:textStyle="bold"
-                    android:textSize="24sp"
-                    android:textColor="@color/black"/>
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

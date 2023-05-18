@@ -4,12 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.View;
 
 public class home_page extends AppCompatActivity {
-    private CardView personal, organization, rules, about;
+    private CardView personal, organization, rules, about, update;
     Vibrator vibrator;
 
     @Override
@@ -21,6 +22,7 @@ public class home_page extends AppCompatActivity {
         organization = findViewById(R.id.organizartion);
         rules = findViewById(R.id.rules);
         about = findViewById(R.id.about);
+        update = findViewById(R.id.update);
 
         vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
 
@@ -56,6 +58,16 @@ public class home_page extends AppCompatActivity {
             public void onClick(View view) {
                 vibrator.vibrate(100);
                 Intent i = new Intent(home_page.this, about.class);
+                startActivity(i);
+            }
+        });
+
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                vibrator.vibrate(100);
+                Uri uri = Uri.parse("https://republic-of-legends.netlify.app/projects/android/amar_zakat.html");
+                Intent i = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(i);
             }
         });
