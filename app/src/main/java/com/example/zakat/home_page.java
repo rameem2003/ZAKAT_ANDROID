@@ -10,7 +10,7 @@ import android.os.Vibrator;
 import android.view.View;
 
 public class home_page extends AppCompatActivity {
-    private CardView personal, organization, rules, about, update;
+    private CardView personal, organization, rules, hadis, about, update;
     Vibrator vibrator;
 
     @Override
@@ -21,6 +21,7 @@ public class home_page extends AppCompatActivity {
         personal = findViewById(R.id.personal);
         organization = findViewById(R.id.organizartion);
         rules = findViewById(R.id.rules);
+        hadis = findViewById(R.id.hadis);
         about = findViewById(R.id.about);
         update = findViewById(R.id.update);
 
@@ -50,6 +51,14 @@ public class home_page extends AppCompatActivity {
                 vibrator.vibrate(100);
                 Intent i = new Intent(home_page.this, rules.class);
                 startActivity(i);
+            }
+        });
+
+        hadis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent h = new Intent(home_page.this, hadispage.class);
+                startActivity(h);
             }
         });
 
