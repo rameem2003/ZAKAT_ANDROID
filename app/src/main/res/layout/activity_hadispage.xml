@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="কিছু গুরুত্বপূর্ণ হাদিস"
+            android:text="গুরুত্বপূর্ণ হাদিস"
             android:textAlignment="center"
             android:textSize="40sp"
             android:textStyle="bold"
@@ -101,6 +101,82 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="হাদিস ২"
+                        android:textAlignment="textStart"
+                        android:layout_marginLeft="10dp"
+                        android:textStyle="bold"
+                        android:textSize="30sp"
+                        android:textColor="@color/black"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/hadis3"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="20dp"
+                android:layout_margin="20dp"
+                android:backgroundTint="#FFE1E7E8"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/baseline_menu_book_24"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="হাদিস ৩"
+                        android:textAlignment="textStart"
+                        android:layout_marginLeft="10dp"
+                        android:textStyle="bold"
+                        android:textSize="30sp"
+                        android:textColor="@color/black"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/hadis4"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="20dp"
+                android:layout_margin="20dp"
+                android:backgroundTint="#FFE1E7E8"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/baseline_menu_book_24"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="হাদিস ৪"
                         android:textAlignment="textStart"
                         android:layout_marginLeft="10dp"
                         android:textStyle="bold"

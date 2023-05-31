@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".hadis_one">
-
+    tools:context=".hadis_three">
 
     <!--  Header  -->
     <LinearLayout
@@ -19,7 +18,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="হাদিস ১"
+            android:text="হাদিস ৩"
             android:textAlignment="center"
             android:textSize="40sp"
             android:textStyle="bold"
@@ -50,7 +49,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="(সহীহ বুখারী, ভলিউম 2, বুক 24, নং 491)"
+                android:text="(সহীহ মুসলিম, বুক 5, 2178)"
                 android:textSize="20sp"
                 android:textAlignment="center"
                 android:textColor="#ff0000"
@@ -61,7 +60,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/hadis1"
+                android:text="@string/hadis3"
                 android:textSize="25sp"
                 android:textColor="@color/black"
                 android:layout_marginTop="10dp"
@@ -72,4 +71,5 @@
         </LinearLayout>
 
     </ScrollView>
+
 </LinearLayout>

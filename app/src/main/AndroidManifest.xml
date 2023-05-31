@@ -14,6 +14,15 @@
         android:theme="@style/Theme.Zakat"
         tools:targetApi="31">
         <activity
+            android:name=".hadis_four"
+            android:exported="false" />
+        <activity
+            android:name=".hadis_three"
+            android:exported="false" />
+        <activity
+            android:name=".hadis_two"
+            android:exported="false" />
+        <activity
             android:name=".hadis_one"
             android:exported="false" />
         <activity
