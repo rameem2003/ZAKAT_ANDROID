@@ -1,8 +1,10 @@
 package com.example.zakat;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,6 +14,8 @@ import android.view.View;
 public class home_page extends AppCompatActivity {
     private CardView personal, organization, rules, hadis, about, update;
     Vibrator vibrator;
+
+    AlertDialog.Builder alertdialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +61,7 @@ public class home_page extends AppCompatActivity {
         hadis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                vibrator.vibrate(100);
                 Intent h = new Intent(home_page.this, hadispage.class);
                 startActivity(h);
             }
@@ -75,9 +80,34 @@ public class home_page extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 vibrator.vibrate(100);
-                Uri uri = Uri.parse("https://republic-of-legends.netlify.app/projects/android/amar_zakat.html");
-                Intent i = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(i);
+                alertdialog = new AlertDialog.Builder(home_page.this);
+                alertdialog.setTitle("আপডেট");
+                alertdialog.setMessage("আপনি কি অ্যাপটি আপডেট করতে চান?");
+                alertdialog.setIcon(R.drawable.baseline_download_24);
+
+                alertdialog.setPositiveButton("হ্যাঁ", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Uri uri = Uri.parse("https://republic-of-legends.netlify.app/projects/android/amar_zakat.html");
+                        Intent u = new Intent(Intent.ACTION_VIEW, uri);
+                        startActivity(u);
+                    }
+                });
+
+                alertdialog.setNegativeButton("না", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+
+                AlertDialog dialog = alertdialog.create();
+
+                dialog.show();
+
+
+
+
             }
         });
     }

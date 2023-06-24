@@ -10,8 +10,8 @@ android {
         applicationId "com.example.zakat"
         minSdk 24
         targetSdk 33
-        versionCode 1
-        versionName 'Insider Preview'
+        versionCode 2
+        versionName '2.0 Public'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
