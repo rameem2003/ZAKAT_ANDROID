@@ -12,7 +12,7 @@ import android.os.Vibrator;
 import android.view.View;
 
 public class home_page extends AppCompatActivity {
-    private CardView personal, organization, rules, hadis, about, update;
+    private CardView personal, organization, rules, hadis, about, update, apps;
     Vibrator vibrator;
 
     AlertDialog.Builder alertdialog;
@@ -27,6 +27,7 @@ public class home_page extends AppCompatActivity {
         rules = findViewById(R.id.rules);
         hadis = findViewById(R.id.hadis);
         about = findViewById(R.id.about);
+        apps = findViewById(R.id.apps);
         update = findViewById(R.id.update);
 
         vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
@@ -73,6 +74,16 @@ public class home_page extends AppCompatActivity {
                 vibrator.vibrate(100);
                 Intent i = new Intent(home_page.this, about.class);
                 startActivity(i);
+            }
+        });
+
+        apps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                vibrator.vibrate(100);
+                Uri uri = Uri.parse("https://republic-of-legends.netlify.app/projects/android/appgallery");
+                Intent u = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(u);
             }
         });
 
