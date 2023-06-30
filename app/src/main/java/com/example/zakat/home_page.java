@@ -1,15 +1,26 @@
 package com.example.zakat;
 
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentSender;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.View;
+
+import com.google.android.gms.tasks.Task;
+import com.google.android.play.core.appupdate.AppUpdateInfo;
+import com.google.android.play.core.appupdate.AppUpdateManager;
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
+import com.google.android.play.core.appupdate.AppUpdateOptions;
+import com.google.android.play.core.install.model.AppUpdateType;
+import com.google.android.play.core.install.model.UpdateAvailability;
 
 public class home_page extends AppCompatActivity {
     private CardView personal, organization, rules, hadis, about, update, apps;
@@ -17,10 +28,13 @@ public class home_page extends AppCompatActivity {
 
     AlertDialog.Builder alertdialog;
 
+    private static final int MY_REQUEST_CODE = 100;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+        checkAppUpdate();
 
         personal = findViewById(R.id.personal);
         organization = findViewById(R.id.organizartion);
@@ -81,7 +95,7 @@ public class home_page extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 vibrator.vibrate(100);
-                Uri uri = Uri.parse("https://republic-of-legends.netlify.app/projects/android/appgallery");
+                Uri uri = Uri.parse("https://republic-of-legends.netlify.app/appgallery");
                 Intent u = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(u);
             }
@@ -99,7 +113,7 @@ public class home_page extends AppCompatActivity {
                 alertdialog.setPositiveButton("হ্যাঁ", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Uri uri = Uri.parse("https://republic-of-legends.netlify.app/projects/android/amar_zakat.html");
+                        Uri uri = Uri.parse("https://republic-of-legends.netlify.app/appgallery/amarzakat");
                         Intent u = new Intent(Intent.ACTION_VIEW, uri);
                         startActivity(u);
                     }
@@ -122,4 +136,51 @@ public class home_page extends AppCompatActivity {
             }
         });
     }
+
+
+    private void checkAppUpdate (){
+        AppUpdateManager appUpdateManager = AppUpdateManagerFactory.create(this);
+
+        // Returns an intent object that you use to check for an update.
+        Task<AppUpdateInfo> appUpdateInfoTask = appUpdateManager.getAppUpdateInfo();
+
+        // Checks that the platform will allow the specified type of update.
+        appUpdateInfoTask.addOnSuccessListener(appUpdateInfo -> {
+            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
+                    // This example applies an immediate update. To apply a flexible update
+                    // instead, pass in AppUpdateType.FLEXIBLE
+                    && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
+                // Request the update.
+                try {
+                    appUpdateManager.startUpdateFlowForResult(
+                            // Pass the intent that is returned by 'getAppUpdateInfo()'.
+                            appUpdateInfo
+                            // an activity result launcher registered via registerForActivityResult
+                            ,AppUpdateType.IMMEDIATE, home_page.this,
+                            // Or pass 'AppUpdateType.FLEXIBLE' to newBuilder() for
+                            // flexible updates.
+                            MY_REQUEST_CODE);
+                } catch (IntentSender.SendIntentException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == MY_REQUEST_CODE) {
+            if (resultCode != RESULT_OK) {
+                Log.d("msg","Update flow failed! Result code: " + resultCode);
+                // If the update is cancelled or fails,
+                // you can request to start the update again.
+            }
+        }
+
+    }
+
+
+
+
 }
