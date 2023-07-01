@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.zakat'
+    namespace 'com.rol.zakat'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.zakat"
+        applicationId "com.rol.zakat"
         minSdk 24
         targetSdk 33
         versionCode 2

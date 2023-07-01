@@ -1,4 +1,4 @@
-package com.example.zakat;
+package com.rol.zakat;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -1,4 +1,4 @@
-package com.example.zakat;
+package com.rol.zakat;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,9 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
-import android.graphics.drawable.ColorStateListDrawable;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -22,24 +20,22 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
-import java.util.zip.Inflater;
-
-public class personal_zakat extends AppCompatActivity {
+public class organizational_zakat extends AppCompatActivity {
     LinearLayout calcView, resultView;
     MaterialButton calc, back;
 
-    TextInputLayout gold_layout, silver_layout, bank_layout, hajj_layout, loan_layout, invest_layout, cradit_layout, employee_layout, tax_layout;
-    TextInputEditText gold, silver, bank, hajj, loan, invest, cradit, employee, tax;
+    TextInputLayout gold_layout, silver_layout, bank_layout, hajj_layout, loan_layout, invest_layout, stock_layout,
+            cradit_layout, employee_layout, tax_layout;
+    TextInputEditText gold, silver, bank, hajj, loan, invest, stock, cradit, employee, tax;
     TextView total, jakat;
 
     AlertDialog dialog;
-
     int nisab = 43000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_personal_zakat);
+        setContentView(R.layout.activity_organizational_zakat);
 
         String errorMsg = "ফিল্ডটি পুরন হয় নাই, দয়া করে পূরণ করুন বা শূন্য বসিয়ে এগিয়ে যান";
         String toastMsg = "আপনি একটি ফিল্ড খালি রেখেছেন";
@@ -55,6 +51,7 @@ public class personal_zakat extends AppCompatActivity {
         hajj_layout = findViewById(R.id.hajj_layout);
         loan_layout = findViewById(R.id.loan_layout);
         invest_layout = findViewById(R.id.invest_layout);
+        stock_layout = findViewById(R.id.stock_layout);
         cradit_layout = findViewById(R.id.cradit_layout);
         employee_layout = findViewById(R.id.employee_layout);
         tax_layout = findViewById(R.id.tax_layout);
@@ -66,6 +63,7 @@ public class personal_zakat extends AppCompatActivity {
         hajj = findViewById(R.id.hajj);
         loan = findViewById(R.id.loan);
         invest = findViewById(R.id.invest);
+        stock = findViewById(R.id.stock);
         cradit = findViewById(R.id.cradit);
         employee = findViewById(R.id.employee);
         tax = findViewById(R.id.tax);
@@ -88,6 +86,7 @@ public class personal_zakat extends AppCompatActivity {
                 String hajj_value = hajj.getText().toString();
                 String loan_value = loan.getText().toString();
                 String invest_value = invest.getText().toString();
+                String stock_value = stock.getText().toString();
                 String cradit_value = cradit.getText().toString();
                 String employee_value = employee.getText().toString();
                 String tax_value = tax.getText().toString();
@@ -97,54 +96,60 @@ public class personal_zakat extends AppCompatActivity {
                 if(gold_value.isEmpty()){
                     gold_layout.setHelperText(errorMsg);
                     gold_layout.setError(errorMsg);
-                    Toast.makeText(personal_zakat.this, toastMsg, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(organizational_zakat.this, toastMsg, Toast.LENGTH_SHORT).show();
                 }
                 else if(silver_value.isEmpty()){
                     silver_layout.setHelperText(errorMsg);
                     silver_layout.setError(errorMsg);
-                    Toast.makeText(personal_zakat.this, toastMsg, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(organizational_zakat.this, toastMsg, Toast.LENGTH_SHORT).show();
                 }
 
                 else if(bank_value.isEmpty()){
                     bank_layout.setHelperText(errorMsg);
                     bank_layout.setError(errorMsg);
-                    Toast.makeText(personal_zakat.this, toastMsg, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(organizational_zakat.this, toastMsg, Toast.LENGTH_SHORT).show();
                 }
 
                 else if(hajj_value.isEmpty()){
                     hajj_layout.setHelperText(errorMsg);
                     hajj_layout.setError(errorMsg);
-                    Toast.makeText(personal_zakat.this, toastMsg, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(organizational_zakat.this, toastMsg, Toast.LENGTH_SHORT).show();
                 }
 
                 else if(loan_value.isEmpty()){
                     loan_layout.setHelperText(errorMsg);
                     loan_layout.setError(errorMsg);
-                    Toast.makeText(personal_zakat.this, toastMsg, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(organizational_zakat.this, toastMsg, Toast.LENGTH_SHORT).show();
                 }
 
                 else if(invest_value.isEmpty()){
                     invest_layout.setHelperText(errorMsg);
                     invest_layout.setError(errorMsg);
-                    Toast.makeText(personal_zakat.this, toastMsg, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(organizational_zakat.this, toastMsg, Toast.LENGTH_SHORT).show();
+                }
+
+                else if(stock_value.isEmpty()){
+                    stock_layout.setHelperText(errorMsg);
+                    stock_layout.setError(errorMsg);
+                    Toast.makeText(organizational_zakat.this, toastMsg, Toast.LENGTH_SHORT).show();
                 }
 
                 else if(cradit_value.isEmpty()){
                     cradit_layout.setHelperText(errorMsg);
                     cradit_layout.setError(errorMsg);
-                    Toast.makeText(personal_zakat.this, toastMsg, Toast.LENGTH_LONG).show();
+                    Toast.makeText(organizational_zakat.this, toastMsg, Toast.LENGTH_LONG).show();
                 }
 
                 else if(employee_value.isEmpty()){
                     employee_layout.setHelperText(errorMsg);
                     employee_layout.setError(errorMsg);
-                    Toast.makeText(personal_zakat.this, toastMsg, Toast.LENGTH_LONG).show();
+                    Toast.makeText(organizational_zakat.this, toastMsg, Toast.LENGTH_LONG).show();
                 }
 
                 else if(tax_value.isEmpty()){
                     tax_layout.setHelperText(errorMsg);
                     tax_layout.setError(errorMsg);
-                    Toast.makeText(personal_zakat.this, toastMsg, Toast.LENGTH_LONG).show();
+                    Toast.makeText(organizational_zakat.this, toastMsg, Toast.LENGTH_LONG).show();
                 }
 
                 else {
@@ -172,6 +177,10 @@ public class personal_zakat extends AppCompatActivity {
                         invest_layout.setError("");
                         invest_layout.setHelperText("ফিল্ডটি পূরণ হয়েছে");
                         invest_layout.setHelperTextColor(ColorStateList.valueOf(Color.parseColor("#FF009432")));
+                    } if (!stock_value.isEmpty()) {
+                        stock_layout.setError("");
+                        stock_layout.setHelperText("ফিল্ডটি পূরণ হয়েছে");
+                        stock_layout.setHelperTextColor(ColorStateList.valueOf(Color.parseColor("#FF009432")));
                     } if (!cradit_value.isEmpty()) {
                         cradit_layout.setError("");
                         cradit_layout.setHelperText("ফিল্ডটি পূরণ হয়েছে");
@@ -193,12 +202,13 @@ public class personal_zakat extends AppCompatActivity {
                     int hajj_amount = Integer.parseInt(hajj.getText().toString());
                     int loan_amount = Integer.parseInt(loan.getText().toString());
                     int invest_amount = Integer.parseInt(invest.getText().toString());
+                    int stock_amount = Integer.parseInt(stock.getText().toString());
 
                     int cradit_amount = Integer.parseInt(cradit.getText().toString());
                     int employee_amount = Integer.parseInt(employee.getText().toString());
                     int tax_amount = Integer.parseInt(tax.getText().toString());
 
-                    int asset = gold_amount + silver_amount + bank_amount + hajj_amount+ loan_amount + invest_amount;
+                    int asset = gold_amount + silver_amount + bank_amount + hajj_amount + loan_amount + invest_amount + stock_amount;
                     int liabilities = cradit_amount + employee_amount + tax_amount;
 
                     int total_asset = asset - liabilities;
@@ -212,16 +222,12 @@ public class personal_zakat extends AppCompatActivity {
                         //jakat.setText("যাকাত প্রদেয় " + payable_zakat + " টাকা");
 
                         showCustomAlertBox(total_asset, payable_zakat, "", true);
-
-
-
                     }else {
                         //calcView.setVisibility(View.GONE);
                         //resultView.setVisibility(View.VISIBLE);
 
                         //total.setText("মোট সম্পদ " + total_asset + " টাকা");
                         //jakat.setText("আপনার জাকাত দেওয়ার মত পর্যাপ্ত নিসাব নাই!!");
-
                         showCustomAlertBox(total_asset, 0, "আপনার জাকাত দেওয়ার মত পর্যাপ্ত নিসাব নাই!!", false);
                     }
                 }
@@ -236,6 +242,7 @@ public class personal_zakat extends AppCompatActivity {
 
             }
         });
+
     }
 
     private void showCustomAlertBox(int asset, float zakat, String msg, boolean state) {
@@ -247,7 +254,7 @@ public class personal_zakat extends AppCompatActivity {
         Button customMsgBack = layoutView.findViewById(R.id.back);
         ImageView stateIcon = layoutView.findViewById(R.id.stateIcon);
 
-        dialog = new AlertDialog.Builder(personal_zakat.this).setView(layoutView).create();
+        dialog = new AlertDialog.Builder(organizational_zakat.this).setView(layoutView).create();
         dialog.show();
 
         if(state == true){

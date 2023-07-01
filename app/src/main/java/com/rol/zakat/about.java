@@ -1,14 +1,14 @@
-package com.example.zakat;
+package com.rol.zakat;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class hadis_one extends AppCompatActivity {
+public class about extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hadis_one);
+        setContentView(R.layout.activity_about);
     }
 }
